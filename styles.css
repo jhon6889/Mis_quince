@@ -409,6 +409,7 @@ body::selection {
   75% { opacity: .7; transform: translate3d(18px,-9px,0) scale(1); }
 }
 
+
 .footer {
   position: absolute;
   z-index: 10;
@@ -418,8 +419,8 @@ body::selection {
   display: flex;
   align-items: center;
   gap: 13px;
-  color: rgba(244,234,208,.28);
-  font-size: 7px;
+  color: rgba(239, 238, 243, 0.28);
+  font-size: 17px;
   letter-spacing: .35em;
   white-space: nowrap;
 }
@@ -427,7 +428,7 @@ body::selection {
 .footer-line {
   width: 40px;
   height: 1px;
-  background: rgba(216,174,91,.35);
+  background: rgba(209, 111, 13, 0.35);
 }
 
 @media (max-width: 900px) {
