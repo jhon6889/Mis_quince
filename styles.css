@@ -134,7 +134,7 @@ body::selection {
 
 .brand-mark small {
   grid-column: 2;
-  font-size: 7px;
+  font-size: 17px;
   letter-spacing: .38em;
   opacity: .65;
 }
