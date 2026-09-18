@@ -420,12 +420,13 @@ body::selection {
   align-items: center;
   gap: 13px;
   color: rgba(239, 238, 243, 0.28);
-  font-size: 17px;
+  font-size: 12px;
   letter-spacing: .35em;
   white-space: nowrap;
 }
 
 .footer-line {
+  font-size: 10px;
   width: 40px;
   height: 1px;
   background: rgba(209, 111, 13, 0.35);
