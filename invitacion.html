@@ -3,34 +3,126 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#07130d">
-  <title>Luciana · Invitación</title>
-  <style>
-    :root { color-scheme: dark; }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0; min-height: 100vh; display: grid; place-items: center;
-      padding: 24px; background:
-      radial-gradient(circle at 50% 30%, #193421 0, #07110b 42%, #020504 100%);
-      color: #f4ead0; font-family: Georgia, serif; text-align: center;
-    }
-    .card {
-      width: min(700px, 100%); padding: 60px 28px;
-      border: 1px solid rgba(216,174,91,.35);
-      box-shadow: 0 0 80px rgba(216,174,91,.08);
-      background: rgba(5,12,8,.7);
-    }
-    h1 { margin: 0; font-family: Georgia, serif; font-size: clamp(38px, 8vw, 70px); }
-    p { color: rgba(244,234,208,.65); line-height: 1.7; }
-    a { color: #f5dfa4; text-decoration: none; }
-  </style>
+  <meta name="theme-color" content="#071a14">
+  <title>Yarli Quintero Ocampo | Mis 15</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main class="card">
-    <p>EL CUENTO CONTINÚA</p>
-    <h1>Invitación</h1>
-    <p>Esta es la página de destino. Aquí construiremos la invitación completa en el siguiente paso.</p>
-    <a href="index.html">← Volver al inicio</a>
+
+ 
+
+    <section id="invitacion" class="section">
+      <p class="label">UNA FECHA ESPECIAL</p>
+      <h2>Hay momentos que merecen <em>ser celebrados</em></h2>
+      <div class="gold-line"></div>
+      <p class="text">
+        Hay noches que permanecen en el corazón para siempre.
+        <br><br>
+        Quiero compartir contigo una de las más importantes de mi vida:
+        la celebración de mis quince años.
+        <br><br>
+        Será una noche llena de alegría, música, magia y momentos
+        que espero recordar toda la vida.
+        <br><br>
+        <strong>Tu presencia hará que esta noche sea aún más especial.</strong>
+      </p>
+    </section>
+
+    <section class="countdown-section">
+      <p class="label">LA CUENTA REGRESIVA</p>
+      <h2>Falta poco para la gran noche</h2>
+      <div class="countdown">
+        <div><b id="days">00</b><small>Días</small></div>
+        <i>:</i>
+        <div><b id="hours">00</b><small>Horas</small></div>
+        <i>:</i>
+        <div><b id="minutes">00</b><small>Minutos</small></div>
+        <i>:</i>
+        <div><b id="seconds">00</b><small>Segundos</small></div>
+      </div>
+    </section>
+
+    <section class="details">
+      <article>
+        <span>◷</span>
+        <p>FECHA</p>
+        <h3>Sábado</h3>
+        <small>23 de enero de 2027</small>
+      </article>
+      <article>
+        <span>⌚</span>
+        <p>HORA</p>
+        <h3>7:00 PM</h3>
+        <small>Te esperamos puntual</small>
+      </article>
+      <article>
+        <span>✦</span>
+        <p>CELEBRACIÓN</p>
+        <h3>Mis 15 años</h3>
+        <small>Una noche para recordar</small>
+      </article>
+    </section>
+
+    <section class="punctuality">
+      <div class="clock">◷</div>
+      <div>
+        <p class="label">IMPORTANTE</p>
+        <h2>¡Te esperamos puntual!</h2>
+        <p>La celebración comenzará a las <strong>7:00 de la noche</strong>.
+        Queremos compartir contigo cada momento desde el comienzo.</p>
+      </div>
+    </section>
+
+    <section id="vestimenta" class="section dress">
+      <p class="label">CÓDIGO DE VESTIMENTA</p>
+      <h2>Dress <em>Code</em></h2>
+      <div class="gold-line"></div>
+
+      <div class="dress-card">
+        <div class="dress-icon">♕</div>
+        <h3>Vestimenta tipo cóctel</h3>
+        <p>Te invitamos a vestir con elegancia para acompañarnos en esta noche tan especial.</p>
+      </div>
+
+      <div class="green-warning">
+        <div class="warning-icon">✦</div>
+        <div>
+          <small>IMPORTANTE</small>
+          <h3>El color verde está reservado exclusivamente para Yarli</h3>
+          <p>Agradecemos que evites utilizar prendas de color verde durante la celebración.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="lugar" class="location">
+      <div>
+        <p class="label">NOS ENCONTRAMOS EN</p>
+        <h2>Celebraciones <em>Diamond</em></h2>
+        <div class="gold-line left"></div>
+        <p class="address"><strong>Av. 80 #45F-77</strong><br>
+          Medellín, Antioquia<br>
+          Cerca de la estación Floresta</p>
+        <a class="map" target="_blank" rel="noopener"
+           href="https://www.google.com/maps/search/?api=1&query=Av.%2080%20%2345F-77%20Medell%C3%ADn">
+          Ver ubicación en Google Maps →
+        </a>
+      </div>
+      <div class="location-mark">⌖</div>
+    </section>
+
+    <section class="final">
+      <p class="label">UNA NOCHE PARA RECORDAR</p>
+      <h2>Espero compartir <em>este momento contigo</em></h2>
+      <p>Gracias por formar parte de esta etapa tan importante de mi vida.</p>
+      <div class="signature">Yarli</div>
+      <small>23 · 01 · 2027</small>
+    </section>
   </main>
+
+  <footer>
+    Yarli Quintero Ocampo · Mis 15 años · 2027
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
