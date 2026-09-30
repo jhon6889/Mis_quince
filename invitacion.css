@@ -1,0 +1,915 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --background: #06110c;
+    --background-two: #0a1912;
+    --green: #315c42;
+    --green-light: #6f9b79;
+    --gold: #d5b56c;
+    --gold-light: #f0d99a;
+    --cream: #f5efdf;
+    --text: #ddd7c9;
+    --muted: #9b9b8d;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(49, 92, 66, 0.25),
+            transparent 40%
+        ),
+        linear-gradient(
+            180deg,
+            #06110c 0%,
+            #08150f 50%,
+            #040b08 100%
+        );
+
+    color: var(--text);
+    font-family: "Montserrat", sans-serif;
+    overflow-x: hidden;
+}
+
+.page {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+
+/* =========================
+   FONDO
+========================= */
+
+.stars {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.5;
+    background-image:
+        radial-gradient(circle, rgba(255,255,255,.8) 1px, transparent 1px),
+        radial-gradient(circle, rgba(213,181,108,.7) 1px, transparent 1px);
+
+    background-size:
+        130px 130px,
+        190px 190px;
+
+    background-position:
+        20px 30px,
+        80px 90px;
+}
+
+.glow {
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    filter: blur(100px);
+    pointer-events: none;
+    opacity: .15;
+}
+
+.glow-one {
+    background: #4e805d;
+    top: -250px;
+    left: -200px;
+}
+
+.glow-two {
+    background: #b9934b;
+    bottom: -250px;
+    right: -200px;
+}
+
+.leaf {
+    position: fixed;
+    color: rgba(111,155,121,.12);
+    font-size: 160px;
+    pointer-events: none;
+}
+
+.leaf-one {
+    left: -50px;
+    top: 30%;
+    transform: rotate(-30deg);
+}
+
+.leaf-two {
+    right: -50px;
+    top: 65%;
+    transform: rotate(30deg);
+}
+
+
+/* =========================
+   MÚSICA
+========================= */
+
+.music-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 10px 15px;
+
+    border: 1px solid rgba(213,181,108,.5);
+    border-radius: 50px;
+
+    background: rgba(6,17,12,.8);
+    backdrop-filter: blur(10px);
+
+    color: var(--gold-light);
+
+    cursor: pointer;
+
+    transition: .3s ease;
+}
+
+.music-button:hover {
+    border-color: var(--gold);
+    transform: translateY(-2px);
+}
+
+.music-icon {
+    font-size: 20px;
+}
+
+.music-text {
+    font-family: "Cinzel", serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    position: relative;
+    z-index: 2;
+
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 100px 25px 80px;
+}
+
+.small-title,
+.section-label {
+    color: var(--gold);
+    font-family: "Cinzel", serif;
+    font-size: 10px;
+    letter-spacing: 4px;
+}
+
+.crown {
+    color: var(--gold);
+    font-size: 45px;
+    margin: 25px 0 5px;
+    text-shadow: 0 0 30px rgba(213,181,108,.4);
+}
+
+.script {
+    color: var(--gold-light);
+    font-family: "Great Vibes", cursive;
+    font-size: 48px;
+}
+
+.hero h1 {
+    margin-top: 10px;
+
+    color: var(--cream);
+
+    font-family: "Cinzel", serif;
+    font-weight: 500;
+    font-size: clamp(38px, 8vw, 75px);
+
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+.hero h1 span {
+    display: block;
+
+    margin-top: 10px;
+
+    font-size: clamp(16px, 3vw, 25px);
+    letter-spacing: 8px;
+    font-weight: 400;
+
+    color: var(--gold);
+}
+
+.ornament {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+
+    margin: 30px 0;
+
+    color: var(--gold);
+}
+
+.ornament span {
+    width: 70px;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--gold)
+    );
+}
+
+.ornament span:last-child {
+    transform: rotate(180deg);
+}
+
+.invitation-text {
+    max-width: 600px;
+
+    margin: 8px auto;
+
+    color: var(--text);
+
+    font-size: 14px;
+    line-height: 1.9;
+    font-weight: 300;
+}
+
+.date-hero {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    margin-top: 40px;
+
+    padding: 15px 30px;
+
+    border-top: 1px solid rgba(213,181,108,.4);
+    border-bottom: 1px solid rgba(213,181,108,.4);
+}
+
+.date-hero > span {
+    font-family: "Cinzel", serif;
+    font-size: 55px;
+    color: var(--gold-light);
+}
+
+.date-hero div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.date-hero strong {
+    font-family: "Cinzel", serif;
+    font-size: 15px;
+    letter-spacing: 3px;
+}
+
+.date-hero small {
+    margin-top: 4px;
+    color: var(--gold);
+    letter-spacing: 4px;
+}
+
+
+/* =========================
+   SECCIONES
+========================= */
+
+.countdown-section,
+.details,
+.dress-code,
+.message,
+.location,
+.confirmation {
+    position: relative;
+    z-index: 2;
+
+    max-width: 900px;
+    margin: auto;
+
+    padding: 110px 25px;
+    text-align: center;
+}
+
+h2 {
+    margin-top: 15px;
+
+    font-family: "Cinzel", serif;
+    font-weight: 500;
+
+    font-size: clamp(28px, 5vw, 42px);
+
+    color: var(--cream);
+}
+
+.countdown-description {
+    margin-top: 15px;
+
+    color: var(--muted);
+    font-size: 13px;
+}
+
+
+/* =========================
+   CONTADOR
+========================= */
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 15px;
+
+    margin-top: 45px;
+}
+
+.time-box {
+    min-width: 115px;
+
+    padding: 20px 10px;
+
+    border: 1px solid rgba(213,181,108,.3);
+
+    background: rgba(255,255,255,.025);
+
+    backdrop-filter: blur(8px);
+}
+
+.time-box span {
+    display: block;
+
+    font-family: "Cinzel", serif;
+    font-size: 40px;
+
+    color: var(--gold-light);
+}
+
+.time-box small {
+    display: block;
+
+    margin-top: 8px;
+
+    color: var(--muted);
+
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.separator {
+    color: var(--gold);
+    font-size: 25px;
+}
+
+.event-started {
+    display: none;
+
+    margin-top: 35px;
+
+    color: var(--gold-light);
+    font-family: "Great Vibes", cursive;
+    font-size: 30px;
+}
+
+
+/* =========================
+   TARJETAS
+========================= */
+
+.details {
+    max-width: 800px;
+}
+
+.detail-card {
+    display: flex;
+    align-items: center;
+
+    margin-top: 25px;
+
+    padding: 30px;
+
+    border: 1px solid rgba(213,181,108,.18);
+
+    background: rgba(255,255,255,.025);
+
+    text-align: left;
+
+    transition: .3s ease;
+}
+
+.detail-card:hover {
+    border-color: rgba(213,181,108,.5);
+    transform: translateY(-3px);
+}
+
+.detail-icon {
+    width: 65px;
+    height: 65px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-right: 25px;
+
+    border: 1px solid rgba(213,181,108,.4);
+
+    border-radius: 50%;
+
+    color: var(--gold);
+
+    font-size: 25px;
+}
+
+.detail-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.detail-title {
+    color: var(--gold);
+
+    font-family: "Cinzel", serif;
+
+    font-size: 9px;
+    letter-spacing: 3px;
+}
+
+.detail-content strong {
+    margin-top: 6px;
+
+    color: var(--cream);
+
+    font-family: "Cinzel", serif;
+
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+
+.detail-content p {
+    margin-top: 5px;
+
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+.punctual {
+    color: var(--gold-light) !important;
+    font-weight: 500;
+}
+
+.location-reference {
+    color: var(--gold) !important;
+}
+
+
+/* =========================
+   VESTIMENTA
+========================= */
+
+.dress-code {
+    max-width: 800px;
+}
+
+.dress-decoration {
+    color: var(--gold);
+
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.dress-icon {
+    width: 80px;
+    height: 80px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 35px auto 25px;
+
+    border: 1px solid rgba(213,181,108,.5);
+    border-radius: 50%;
+
+    color: var(--gold-light);
+    font-size: 35px;
+}
+
+.dress-description {
+    max-width: 550px;
+
+    margin: auto;
+
+    color: var(--muted);
+
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.green-warning {
+    display: flex;
+    align-items: center;
+
+    max-width: 650px;
+
+    margin: 45px auto 25px;
+
+    padding: 25px;
+
+    border: 1px solid rgba(111,155,121,.65);
+
+    background:
+        rgba(49,92,66,.16);
+
+    text-align: left;
+
+    box-shadow:
+        0 0 35px rgba(49,92,66,.1);
+}
+
+.green-circle {
+    flex-shrink: 0;
+
+    width: 45px;
+    height: 45px;
+
+    margin-right: 20px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #8db696,
+            #315c42 55%,
+            #163724
+        );
+
+    box-shadow:
+        0 0 20px rgba(111,155,121,.35);
+}
+
+.green-warning span {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: var(--green-light);
+
+    font-size: 9px;
+    letter-spacing: 3px;
+}
+
+.green-warning strong {
+    display: block;
+
+    color: #d9e7dc;
+
+    font-family: "Cinzel", serif;
+
+    font-size: 13px;
+    line-height: 1.6;
+    letter-spacing: 1px;
+}
+
+.green-warning p {
+    margin-top: 8px;
+
+    color: var(--muted);
+
+    font-size: 11px;
+}
+
+.cocktail {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+
+    color: var(--gold);
+
+    font-family: "Cinzel", serif;
+
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+
+/* =========================
+   MENSAJE
+========================= */
+
+.message {
+    max-width: 700px;
+}
+
+.message-line {
+    width: 100px;
+    height: 1px;
+
+    margin: 20px auto;
+
+    background: var(--gold);
+    opacity: .5;
+}
+
+.message p:not(.script) {
+    margin: 25px auto;
+
+    max-width: 600px;
+
+    color: var(--text);
+
+    font-size: 14px;
+    line-height: 2;
+}
+
+
+/* =========================
+   UBICACIÓN
+========================= */
+
+.location h2 {
+    color: var(--gold-light);
+}
+
+.location > p:not(.section-label) {
+    margin-top: 15px;
+
+    font-size: 15px;
+}
+
+.location-small {
+    color: var(--muted) !important;
+}
+
+.map-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-top: 30px;
+
+    padding: 14px 25px;
+
+    border: 1px solid var(--gold);
+
+    color: var(--gold-light);
+
+    font-family: "Cinzel", serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+
+    text-decoration: none;
+
+    transition: .3s ease;
+}
+
+.map-button:hover {
+    background: var(--gold);
+    color: #07130d;
+}
+
+
+/* =========================
+   CONFIRMACIÓN
+========================= */
+
+.confirmation {
+    max-width: 700px;
+}
+
+.confirmation > p:not(.section-label) {
+    max-width: 550px;
+
+    margin: 20px auto;
+
+    color: var(--muted);
+
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.final-date {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+
+    margin-top: 25px;
+
+    padding: 15px 25px;
+
+    border: 1px solid rgba(213,181,108,.4);
+}
+
+.final-date > span {
+    color: var(--gold-light);
+
+    font-family: "Cinzel", serif;
+    font-size: 40px;
+}
+
+.final-date div {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.final-date strong {
+    font-family: "Cinzel", serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.final-date small {
+    margin-top: 5px;
+    color: var(--gold);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    position: relative;
+    z-index: 2;
+
+    padding: 80px 20px 50px;
+
+    text-align: center;
+
+    border-top: 1px solid rgba(213,181,108,.15);
+}
+
+.footer-crown {
+    color: var(--gold);
+
+    font-size: 35px;
+}
+
+.footer-name {
+    margin-top: 15px;
+
+    color: var(--cream);
+
+    font-family: "Cinzel", serif;
+
+    font-size: 12px;
+    letter-spacing: 4px;
+}
+
+footer > span {
+    display: block;
+
+    margin-top: 10px;
+
+    color: var(--gold);
+
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+.footer-note {
+    margin-top: 25px;
+
+    color: var(--muted);
+
+    font-family: "Great Vibes", cursive;
+    font-size: 22px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 600px) {
+
+    .music-button {
+        top: 12px;
+        right: 12px;
+        padding: 8px 11px;
+    }
+
+    .music-text {
+        display: none;
+    }
+
+    .hero {
+        padding: 100px 20px 70px;
+    }
+
+    .hero h1 {
+        letter-spacing: 2px;
+    }
+
+    .hero h1 span {
+        letter-spacing: 3px;
+    }
+
+    .script {
+        font-size: 40px;
+    }
+
+    .countdown,
+    .separator {
+        gap: 5px;
+    }
+
+    .time-box {
+        min-width: 67px;
+        padding: 15px 5px;
+    }
+
+    .time-box span {
+        font-size: 25px;
+    }
+
+    .time-box small {
+        font-size: 7px;
+        letter-spacing: 1px;
+    }
+
+    .detail-card {
+        padding: 20px;
+    }
+
+    .detail-icon {
+        width: 50px;
+        height: 50px;
+
+        margin-right: 15px;
+
+        font-size: 20px;
+    }
+
+    .detail-content strong {
+        font-size: 14px;
+    }
+
+    .green-warning {
+        align-items: flex-start;
+        padding: 20px;
+    }
+
+    .green-circle {
+        width: 35px;
+        height: 35px;
+        margin-right: 12px;
+    }
+
+    .green-warning strong {
+        font-size: 11px;
+    }
+
+    .cocktail {
+        font-size: 8px;
+        gap: 8px;
+    }
+
+    .final-date {
+        padding: 12px 18px;
+    }
+}
+
+@media (max-width: 380px) {
+
+    .time-box {
+        min-width: 58px;
+    }
+
+    .time-box span {
+        font-size: 21px;
+    }
+
+    .separator {
+        font-size: 18px;
+    }
+}
